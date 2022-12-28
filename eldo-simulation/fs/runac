@@ -1,0 +1,6 @@
+echo " "
+echo "Updating testac.in file"
+cp ../testac.in .
+echo "Running  testac.in sim using Eldo"
+eldo  testac.in &
+echo " "

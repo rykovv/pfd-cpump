@@ -1,0 +1,18 @@
+** Library name: work_VR
+** Cell name: zz_pfd_cpump
+** View name: schematic
+
+vssa vssa 0 DC=vssa
+vdda vdda 0 DC=vdda
+
+ib25a vdda ib25a DC=ib25a
+
+vclkdiv clkdiv vssa PULSE vdda vssa td_div tr tr pw_div per
+vclkref clkref vssa PULSE vdda vssa td_ref tr tr pw_ref per
+
+cl_cp vocp vssa cl_cp IC='vobias'
+
+xi1 clkdiv clkref vpd vpdb vpu vpub vdda vssa pfd
+xi2 vpd vpdb vpu vpub ib25a vdda vocp vssa cpump
+
+.END

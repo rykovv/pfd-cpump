@@ -1,0 +1,97 @@
+** Library name: work_VR
+** Cell name: cpump
+** View name: schematic
+
+.subckt cpump pd pdb pu pub ib25a vdda vo vssa
+
+*** Wide-swing current mirror
+
+** Current mirror device. Lets charge current be 100uA
+
+.param wcm = 5.58e-6
+.param lcm = 1.44e-6
+
+mb0 ib25a ib25a vssa vssa nch L='lcm' W='wcm' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=2
+mb1 vbpc  ib25a vssa vssa nch L='lcm' W='wcm' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=8
+mb2 vbp   ib25a vssa vssa nch L='lcm' W='wcm' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=8
+
+** P-channel wide swing
+
+.param w6 = 32.4e-6
+.param l6 = 560e-9
+.param m6 = 2
+
+.param w6c = 32.4e-6
+.param l6c = 560e-9
+.param m6c = 2
+
+mb6r  vdb6r vbpc vdda  vdda pch L='l6' W=7.44e-6 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m6'
+mb6   vdb6  vbp  vdda  vdda pch L='l6' W='w6'     AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m6'
+mb6c2 vbpc  vbpc vdb6r vdda pch L='l6c' W='w6c'     AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m6c'
+mb6c  vbp   vbpc vdb6  vdda pch L='l6c' W='w6c'     AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m6c'
+
+** N-channel supply
+
+mb3  vdb3 vbp  vdda vdda pch L='l6' W='w6' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m6'
+mb3c vbnc vbpc vdb3 vdda pch L='l6c' W='w6c' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m6c'
+mb4  vdb4 vbp  vdda vdda pch L='l6' W='w6' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m6'
+mb4c vbn  vbpc vdb4 vdda pch L='l6c' W='w6c' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m6c'
+
+** N-channel wide swing
+
+.param w5 = 21.4e-6
+.param l5 = 1.9e-6
+.param m5 = 2
+
+.param w5c = 21.4e-6
+.param l5c = 1.9e-6
+.param m5c = 2
+
+mb5r  vdb5r vbnc vssa  vssa nch L='l5'  W=4.58e-6 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m5'
+mb5   vdb5  vbn  vssa  vssa nch L='l5'  W='w5'    AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m5'
+mb5c2 vbnc  vbnc vdb5r vssa nch L='l5c' W='w5c'   AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m5c'
+mb5c  vbn   vbnc vdb5  vssa nch L='l5c' W='w5c'   AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m5c'
+
+*** Charge pump
+
+** Pump-up part
+
+.param wud = 4.8e-6
+.param lud = 180e-9
+.param mup = 4
+.param mdn = 2
+
+m6  vd6 vbp     vdda vdda pch L='l6'  W='w6'  AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m6'
+m6c vtp vbpc    vd6  vdda pch L='l6c' W='w6c' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m6c'
+m3  vo2 pu      vtp  vdda pch L='lud' W='wud' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mup'
+m4  vo  pubdel  vtp  vdda pch L='lud' W='wud' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mup'
+
+xi1 pub pubdel vdda vssa tgate
+xi2 pdb pdbdel vdda vssa tgate
+*xi3 pudel1  pudel2  vdda vssa tgate
+*xi4 pubdel1 pubdel2 vdda vssa tgate
+*xi5 pudel2  pudel3  vdda vssa tgate
+*xi6 pubdel2 pubdel3 vdda vssa tgate
+*xi7 pudel3  pudel4  vdda vssa tgate
+*xi8 pubdel3 pubdel4 vdda vssa tgate
+*xi9 pudel4  pudel  vdda vssa tgate
+*xi10 pubdel4 pubdel vdda vssa tgate
+*xi11 pudel5  pddel6  vdda vssa tgate
+*xi12 pubdel5 pdbdel6 vdda vssa tgate
+
+*cpdb pub vssa 10p
+*cpd  pu  vssa 10p
+
+** Pump-down part
+
+m1  vo2 pdbdel vtn  vssa nch L='lud' W='wud' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mdn'
+m2  vo  pd     vtn  vssa nch L='lud' W='wud' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mdn'
+m5c vtn vbnc   vd5  vssa nch L='l5c' W='w5c' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m5c'
+m5  vd5 vbn    vssa vssa nch L='l5'  W='w5'  AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='m5'
+
+** "Bootstrap" circuit. Voltage-controlled voltage source to substitute unity-gain buffer. 
+
+evcvs vo2 vssa VCVS vo vssa 1
+
+.ends cpump
+** End of subcircuit definition.

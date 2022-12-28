@@ -1,0 +1,25 @@
+** Library name: work_VR
+** Cell name: rs_latch
+** View name: schematic
+
+.param lp=180e-9 wp=1.8e-6 mp=2
+.param ln=180e-9 wn=1.8e-6 mn=1
+
+.subckt rs_latch q qb r s vdda vssa
+
+** left nand
+
+m0 q    qb vdda vdda pch L='lp' W='wp' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mp'
+m1 q    s  vdda vdda pch L='lp' W='wp' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mp'
+m2 q    s  net6 vssa nch L='ln' W='wn' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mn'
+m3 net6 qb vssa vssa nch L='ln' W='wn' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mn'
+
+** right nand
+
+m4 qb   q vdda vdda pch L='lp' W='wp' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mp'
+m5 qb   r vdda vdda pch L='lp' W='wp' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mp'
+m6 qb   r net9 vssa nch L='ln' W='wn' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mn'
+m7 net9 q vssa vssa nch L='ln' W='wn' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mn'
+
+.ends rs_latch
+** End of subcircuit definition.

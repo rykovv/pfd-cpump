@@ -1,0 +1,19 @@
+** Library name: work_VR
+** Cell name: zz_cpump
+** View name: schematic
+
+xi1 vpd vpdb vpu vpub ibcp vdda vo_cl vssa cpump
+cl vo_cl vssa cl M=1
+
+vpub vpub vssa PULSE vssa vdda td_pu tr_pu tr_pu pw_pub per_pu
+vpu vpu vssa PULSE vdda vssa td_pu tr_pu tr_pu pw_pu per_pu
+vpd vpd vssa PULSE vdda vssa td_pd tr_pd tr_pd pw_pd per_pd
+vpdb vpdb vssa PULSE vssa vdda td_pd tr_pd tr_pd pw_pdb per_pd
+
+ibcp ibcp vssa M=1
+
+vdda vdda n0 DC=vdda
+vssa vssa n0 DC=vssa
+
+.END
+

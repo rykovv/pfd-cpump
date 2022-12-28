@@ -1,0 +1,96 @@
+* Setup file for spice sims
+
+********************************************************************************
+* Set up simulator options
+********************************************************************************
+
+*** Set input/output options ***
+
+*.option scale=1u    !  Set scale factor for MOS W, L, AD, AS, PD, PS inputs
+
+.width out=120      !  Set number of columns in .chi file (text output)
+.option ingold=2    !  Set output format for numbers to Spice 2G6 default
+.option numdgt=10   !  Set number of digits for .op and .meas numerical outputs
+.option notrc       !  Suppress printing of netlist in .chi file
+.option notrclib    !  Suppress printing of models/subckts from .lib in .chi file
+.option noascii     !  Suppress printing of print/plot outputs in .chi file
+.option nowarn=240  !  Suppress printing of warning 240 in .chi file
+.option probe       !  Add only requested outputs to .wdb file (graphical output)
+.option captab      !  Print capacitance table in .chi file
+.option aex         !  Print measure outputs in .aex file
+
+
+*** Set simulation options ***
+
+.option itl1=1000    !  Set limit for max number of DC iterations (default=100)
+.option itl6=1000    !  Transient timestep contol option (see Eldo_ur.pdf)
+*.option method=gear  !  Use Gear instead of Trapezoidal integration method
+*                     !  (better for current outputs, but slows sims)
+
+.option tuning=accurate !  Set simulation to medium accuracy
+*.option tuning=vhigh    !  Set simulation to high   accuracy
+
+
+********************************************************************************
+* Set up user defined variables for simulation
+********************************************************************************
+
+*
+* Set values for general variables
+*
+.param rmax = 1e12   !  Set value for rmax (max resistor)
+.param rmin = 11u    !  Set value for rmin (min resistor)
+
+
+*
+* Set values for supplies & bias 
+*
+.param vdda  = vdd18  !  Set + supply voltage to variable in setcorner files for 0.18um CMOS
+.param vssa  = 0.0    !  Set - supply voltage to zero
+
+.param ib25a = 25u    !  Set charge pump bias current value (absolute)
+
+*.param vobias = 'vdda/2'
+
+*
+* Set up values for pulsed input source
+*
+
+.param tr  = 0.5n          !  Set rise/fall time for pulsed input source
+.param per = 200n          !  Set period         for pulsed input source
+.param offset = 0.2271462  !  Charge pump phase offset in degrees
+
+.param phase_value = 5
+.param phase = 'phase_value + offset'    !  PFD input phase difference
+
+.param td = 'per/2'
+
+.param tdp = 'per*(phase/360)'
+
+.param td_ref  = 'per/2 - tr - tdp'    !  Set delay     time for pulsed input source
+.param pw_ref  = 'per/2 - tr'          !  Set pulse width    for pulsed input source
+
+.param td_div  = 'per/2 - tr'          !  Set delay     time for pulsed input source
+.param pw_div  = 'per/2 - tr'          !  Set pulse width    for pulsed input source
+
+
+*
+* Set values for testbench
+*
+
+.param oascale = 1             !  Set scale factor for opamp (FET W/L and Id values)
+
+.param cl_cp = 250p    !  Set charge pump load capacitance
+
+
+********************************************************************************
+* Read in circuit files for testbench & DUT (device under test)
+********************************************************************************
+
+.include ../netlists/zz_pfd_cpump.spi   ! testbench netlist
+.include ../netlists/cpump.spi          ! DUT netlist
+.include ../netlists/tgate.spi          ! DUT netlist
+.include ../netlists/pfd.spi            ! DUT netlist
+.include ../netlists/inv.spi            ! DUT netlist
+.include ../netlists/rslch.spi          ! DUT netlist
+.include ../netlists/reslog.spi         ! DUT netlist

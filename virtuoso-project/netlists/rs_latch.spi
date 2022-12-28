@@ -1,0 +1,17 @@
+** Library name: work_VR
+** Cell name: rs_latch
+** View name: schematic
+
+.subckt rs_latch q qb r s vdda vssa
+
+m5 qb r vdda vdda tsmc18dP L=1.44e-6 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m4 qb q vdda vdda tsmc18dP L=1.44e-6 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m1 q s vdda vdda tsmc18dP L=1.44e-6 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m0 q qb vdda vdda tsmc18dP L=1.44e-6 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m6 qb r net9 vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m7 net9 q vssa vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m3 net6 qb vssa vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m2 q s net6 vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+
+.ends rs_latch
+** End of subcircuit definition.

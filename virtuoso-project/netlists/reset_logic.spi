@@ -1,0 +1,17 @@
+** Library name: work_VR
+** Cell name: reset_logic
+** View name: schematic
+
+.subckt reset_logic pd pu rst vdda vssa
+
+mn1 net1 pd vssa vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mn0 rst0 pu net1 vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mp1 rst0 pu vdda vdda tsmc18dP L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mp0 rst0 pd vdda vdda tsmc18dP L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+xi4 rst1b rst vdda vssa inverter
+xi3 rst1 rst1b vdda vssa inverter
+xi2 rst0b rst1 vdda vssa inverter
+xi1 rst0 rst0b vdda vssa inverter
+
+.ends reset_logic
+** End of subcircuit definition.

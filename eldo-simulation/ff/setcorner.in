@@ -1,0 +1,47 @@
+*
+* Set process corner
+*
+
+*
+*** Set temperature & supply voltage to fast values (low temp, high supply)
+*
+
+.temp 0
+
+.param vdd50 = 5.5
+.param vdd35 = 3.6
+.param vdd18 = 2.0
+
+
+*
+********************************************************************
+*  Uncomment the models in the list below for the desired process  *
+********************************************************************
+*
+
+*
+*** Path to NDA models for 0.5um AMI CMOS process for FF (fast-N, fast-P) corner
+*
+
+.LIB /titan/software/mentorms/tech/ami05u/eldo/ami.lib       FF 
+.LIB /titan/software/mentorms/tech/ami05u/eldo/ami_cap.lib   min
+.LIB /titan/software/mentorms/tech/ami05u/eldo/ami_res.lib   min
+*.LIB /titan/software/mentorms/tech/ami05u/eldo/ami_diode.lib fast
+
+
+*
+*** Path to NDA models for 0.35um TSMC CMOS process for FF (fast-N, fast-P) corner
+*
+
+*.LIB /titan/software/mentorms/tech/tsmc035u/eldo/tsmc.lib FF
+
+
+*
+*** Path to NDA models for 0.18um TSMC CMOS process for FF (fast-N, fast-P) corner
+*
+
+*.LIB /titan/software/mentorms/tech/tsmc018u/eldo/mm018.eldo FF
+
+
+
+

@@ -1,0 +1,27 @@
+START report: Tue Nov 29 21:31:39 2022 
+** Note: (eldo-71)  In file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/setup.in" line 17:
++   Option NOWARN found: no more warning 240 displayed.
+** Warning: (eldo-46)  In file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/netlists/reslog.spi" line 5:
++   Double definition for parameter LP
++   Previous definition was in file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/setup.in" line 41
+** Warning: (eldo-46)  In file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/netlists/reslog.spi" line 5:
++   Double definition for parameter WP
++   Previous definition was in file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/setup.in" line 41
+** Warning: (eldo-46)  In file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/netlists/reslog.spi" line 5:
++   Double definition for parameter MP
++   Previous definition was in file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/setup.in" line 41
+** Warning: (eldo-46)  In file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/netlists/reslog.spi" line 6:
++   Double definition for parameter LN
++   Previous definition was in file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/setup.in" line 41
+** Warning: (eldo-46)  In file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/netlists/reslog.spi" line 6:
++   Double definition for parameter WN
++   Previous definition was in file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/setup.in" line 41
+** Warning: (eldo-46)  In file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/netlists/reslog.spi" line 6:
++   Double definition for parameter MN
++   Previous definition was in file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/setup.in" line 41
+** Error: (eldo-214)  In file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/netlists/zz_pfd_cpump.spi" line 13:
++    OBJECT "CL_CP": No value specified for VOBIAS
+** Note: (eldo-71)  In file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/setup.in" line 17:
++   Option NOWARN found: no more warning 240 displayed.
+** Note: (eldo-71)  In file "/home/student/vrykov/EEE235/sims/zz_pfd_cpump/setup.in" line 17:
++   Option NOWARN found: no more warning 240 displayed.

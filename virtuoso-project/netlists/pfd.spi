@@ -1,0 +1,16 @@
+** Library name: work_VR
+** Cell name: pfd
+** View name: schematic
+
+.subckt pfd clkdiv clkref pd pdb pu pub vdda vssa
+
+xi4 pddis nc2 rst qdn vdda vssa rs_latch
+xi3 pudis nc1 rst qup vdda vssa rs_latch
+xi2 qdn pdb pddis clkdiv vdda vssa rs_latch
+xi1 qup pub pudis clkref vdda vssa rs_latch
+xi5 pd pu rst vdda vssa reset_logic
+xi7 pub pu vdda vssa inverter
+xi6 pdb pd vdda vssa inverter
+
+.ends pfd
+** End of subcircuit definition.

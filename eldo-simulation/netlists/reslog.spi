@@ -1,0 +1,27 @@
+** Library name: work_VR
+** Cell name: reset_logic
+** View name: schematic
+
+.param lp=180e-9 wp=1.8e-6 mp=2
+.param ln=180e-9 wn=1.8e-6 mn=1
+
+.subckt reset_logic pd pu rst vdda vssa
+
+** nand gate
+
+m0 rst0 pd vdda vdda pch L='lp' W='wp' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mp'
+m1 rst0 pu vdda vdda pch L='lp' W='wp' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mp'
+m2 rst0 pu net1 vssa nch L='ln' W='wn' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mn'
+m3 net1 pd vssa vssa nch L='ln' W='wn' AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M='mn'
+
+** delay inverters
+
+*xi6 rst2b rst vdda vssa inverter
+*xi5 rst2 rst2b vdda vssa inverter
+xi4 rst1b rst vdda vssa inverter
+xi3 rst1 rst1b vdda vssa inverter
+xi2 rst0b rst1 vdda vssa inverter
+xi1 rst0 rst0b vdda vssa inverter
+
+.ends reset_logic
+** End of subcircuit definition.

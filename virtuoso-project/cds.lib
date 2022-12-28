@@ -1,0 +1,5 @@
+SOFTINCLUDE $SYSTEM_CDS_LIB_DIR/cds.lib
+DEFINE      NCSU_TechLib_tsmc02d    $CDK_DIR/lib/NCSU_TechLib_tsmc02d
+
+--PROCESS018
+DEFINE work_VR /home/student/vrykov/EEE235/pfd/work_VR

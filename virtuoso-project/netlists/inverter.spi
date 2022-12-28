@@ -1,0 +1,11 @@
+** Library name: work_VR
+** Cell name: inverter
+** View name: schematic
+
+.subckt inverter in out vdda vssa
+
+m1 out in vssa vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m0 out in vdda vdda tsmc18dP L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=2
+
+.ends inverter
+** End of subcircuit definition.

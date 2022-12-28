@@ -1,0 +1,56 @@
+AC response for 2-stage opamp with NMOS inputs
+********************************************************************************
+
+*Set up variables and include netlists
+.include ../setup.in
+
+*Set process corner 
+.include ./setcorner.in
+
+********************************************************************************
+* Set up probes for inputs and outputs
+********************************************************************************
+
+.probe ac vdb(vo)  vp(vo)               ! probe for single-ended output signals
+.probe ac vdb(vip) vp(vip)              ! probe for single-ended input  signals
+.probe ac vdb(vin) vp(vin)              ! probe for single-ended input  signals
+
+.probe ac vdb(xi1.vd1) vp(xi1.vd1)  ! probe for internal opamp nodes
+.probe ac vdb(xi1.vd2) vp(xi1.vd2)  ! probe for internal opamp nodes
+.probe ac vdb(xi1.vt)  vp(xi1.vt)   ! probe for internal opamp nodes
+
+
+********************************************************************************
+* Set up measure statements for output signals
+********************************************************************************
+
+.meas ac oascale      PARAM='oascale'
+.meas ac adc          FIND vdb(vo) AT=1
+.meas ac ugbw         WHEN vdb(vo)= 0
+.meas ac ugbw_phase   FIND  vp(vo) WHEN vdb(vo)=0
+.meas ac phase_margin PARAM='ugbw_phase+180'
+
+
+********************************************************************************
+* Set up analysis
+********************************************************************************
+
+.op                                   ! get DC operating point
+
+.ac dec 10 1 1g                       ! AC sweep from 1Hz to 1GHz, 10 points/dec
+
+********************************************************************************
+.alter opamp scaled by 2x
+.param oascale = 2
+********************************************************************************
+.alter opamp scaled by 4x
+.param oascale = 4
+********************************************************************************
+.alter opamp scaled by 8x
+.param oascale = 8
+********************************************************************************
+.alter opamp scaled by 16x
+.param oascale = 16
+********************************************************************************
+
+.end

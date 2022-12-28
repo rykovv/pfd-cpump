@@ -1,0 +1,44 @@
+** Generated for: hspiceD
+** Generated on: Nov 22 21:22:55 2022
+** Design library name: work_VR
+** Design cell name: zz_cpump
+** Design view name: schematic
+
+.PARAM cl vssa vdda td_pu tr_pu pw_pub per_pu pw_pu td_pd tr_pd pw_pd 
++	per_pd pw_pdb
+
+
+** Library name: work_VR
+** Cell name: cpump
+** View name: schematic
+.subckt cpump pd pdb pu pub ibcp vdda vo vssa
+
+mb5c2 vdb5r vbnc vbnc vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mb5c vbn vbnc vdb5 vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mb5 vdb5 vbn vssa vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mb5r vssa vbnc vdb5r vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mb2 vbp ibcp vssa vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mb1 vbpc ibcp vssa vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mb0 vssa ibcp ibcp vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m2 vo pd vtn vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m1 vo2 pdb vtn vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m5c vtn vbnc vd5 vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m5 vd5 vbn vssa vssa tsmc18dN L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mb6r vdda vbpc vdb6r vdda tsmc18dP L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mb6c2 vdb6r vbpc vbpc vdda tsmc18dP L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mb6c vbp vbpc vdb6 vdda tsmc18dP L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mb6 vdb6 vbp vdda vdda tsmc18dP L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mb3 vdb3 vbp vdda vdda tsmc18dP L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mb3c vbnc vbpc vdb3 vdda tsmc18dP L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mb4 vdb4 vbp vdda vdda tsmc18dP L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+mb4c vbn vbpc vdb4 vdda tsmc18dP L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m6 vd6 vbp vdda vdda tsmc18dP L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m6c vtp vbpc vd6 vdda tsmc18dP L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m4 vo pub vtp vdda tsmc18dP L=18i0e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+m3 vo2 pu vtp vdda tsmc18dP L=180e-9 W=270e-9 AD=121.5e-15 AS=121.5e-15 PD=1.44e-6 PS=1.44e-6 M=1
+
+** Voltage-controlled voltage source to substitute unity-gain buffer. "Bootstrap" circuit.
+evcvs vo2 vssa VCVS 1
+
+.ends cpump
+** End of subcircuit definition.

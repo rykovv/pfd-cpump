@@ -1,0 +1,47 @@
+*
+* Set process corner
+*
+
+*
+*** Set temperature & supply voltage to slow values (high temp, low supply)
+*
+
+.temp 85
+
+.param vdd50 = 4.5
+.param vdd35 = 3.0
+.param vdd18 = 1.6
+
+
+*
+********************************************************************
+*  Uncomment the models in the list below for the desired process  *
+********************************************************************
+*
+
+*
+*** Path to NDA models for 0.5um AMI CMOS process for SS (slow-N, slow-P) corner
+*
+
+*.LIB /titan/software/mentorms/tech/ami05u/eldo/ami.lib       SS 
+*.LIB /titan/software/mentorms/tech/ami05u/eldo/ami_cap.lib   max
+*.LIB /titan/software/mentorms/tech/ami05u/eldo/ami_res.lib   max
+*.LIB /titan/software/mentorms/tech/ami05u/eldo/ami_diode.lib slow
+
+
+*
+*** Path to NDA models for 0.35um TSMC CMOS process for SS (slow-N, slow-P) corner
+*
+
+*.LIB /titan/software/mentorms/tech/tsmc035u/eldo/tsmc.lib SS
+
+
+*
+*** Path to NDA models for 0.18um TSMC CMOS process for SS (slow-N, slow-P) corner
+*
+
+.LIB /titan/software/mentorms/tech/tsmc018u/eldo/mm018.eldo SS
+
+
+
+

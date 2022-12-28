@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      vrykov
+HostName                       ecs-pa-hawking.ecs.csus.edu
+ProcessIdentifier              25236
+ProcessCreationTime_UTC        1672187474
+ProcessCreationTime_Readable   Tue Dec 27 16:31:14 2022 PST
+AppIdentifier                  /opt/cadence/IC618/tools/dfII/bin/64bit/libManager
+OSType                         lnx86
+ReasonForPlacingEditLock       log file
+FilePathUsedToEditLock         /home/student/vrykov/EEE235/pfd/libManager.log
+TimeEditLocked                 Tue Dec 27 16:31:17 2022 PST

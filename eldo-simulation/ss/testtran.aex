@@ -1,0 +1,331 @@
+
+TITLE OUTPUT VOLTAGE 100MV
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 1    OUTPUT VOLTAGE 100MV
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -5.3441650990E-04   
+    *IVSSA_AVG    =  5.3441650991E-04   
+    *IVDDA_RMS    =  5.3679319564E-04   
+    *IVSSA_RMS    =  5.3679319566E-04   
+    *IVDDA_PP     =  1.0874059079E-03   
+    *IVSSA_PP     =  1.0874059079E-03   
+    *IVDDA_MAX    = -5.0498323061E-04   
+    *IVSSA_MAX    =  1.5923891385E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  1.0732512297E-01   
+    *SAMPLE_2     =  1.0770641531E-01   
+    *VOCP_INC     =  3.8129234046E-04   
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 2    OUTPUT VOLTAGE 200MV
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -5.3440191161E-04   
+    *IVSSA_AVG    =  5.3440191162E-04   
+    *IVDDA_RMS    =  5.3656241531E-04   
+    *IVSSA_RMS    =  5.3656241533E-04   
+    *IVDDA_PP     =  1.0600650865E-03   
+    *IVSSA_PP     =  1.0600650865E-03   
+    *IVDDA_MAX    = -5.0636947015E-04   
+    *IVSSA_MAX    =  1.5664345567E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  2.0536638516E-01   
+    *SAMPLE_2     =  2.0565633084E-01   
+    *VOCP_INC     =  2.8994567879E-04   
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 3    OUTPUT VOLTAGE 300MV
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -5.3438974188E-04   
+    *IVSSA_AVG    =  5.3438974176E-04   
+    *IVDDA_RMS    =  5.3662941614E-04   
+    *IVSSA_RMS    =  5.3662941603E-04   
+    *IVDDA_PP     =  1.0398961939E-03   
+    *IVSSA_PP     =  1.0398961940E-03   
+    *IVDDA_MAX    = -5.0632079157E-04   
+    *IVSSA_MAX    =  1.5462169855E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  3.0431404557E-01   
+    *SAMPLE_2     =  3.0455928134E-01   
+    *VOCP_INC     =  2.4523576129E-04   
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 4    OUTPUT VOLTAGE 400MV
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -5.3436797265E-04   
+    *IVSSA_AVG    =  5.3436797265E-04   
+    *IVDDA_RMS    =  5.3747819057E-04   
+    *IVSSA_RMS    =  5.3747819057E-04   
+    *IVDDA_PP     =  1.1133669912E-03   
+    *IVSSA_PP     =  1.1133669915E-03   
+    *IVDDA_MAX    = -4.7947090550E-04   
+    *IVSSA_MAX    =  1.5928378970E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  5.0359761714E-01   
+    *SAMPLE_2     =  5.0382148098E-01   
+    *VOCP_INC     =  2.2386383835E-04   
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 5    OUTPUT VOLTAGE 500MV
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -5.3436797265E-04   
+    *IVSSA_AVG    =  5.3436797265E-04   
+    *IVDDA_RMS    =  5.3747819057E-04   
+    *IVSSA_RMS    =  5.3747819057E-04   
+    *IVDDA_PP     =  1.1133669912E-03   
+    *IVSSA_PP     =  1.1133669915E-03   
+    *IVDDA_MAX    = -4.7947090550E-04   
+    *IVSSA_MAX    =  1.5928378970E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  5.0359761714E-01   
+    *SAMPLE_2     =  5.0382148098E-01   
+    *VOCP_INC     =  2.2386383835E-04   
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 6    OUTPUT VOLTAGE 600MV
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -5.3435269377E-04   
+    *IVSSA_AVG    =  5.3435269377E-04   
+    *IVDDA_RMS    =  5.3668353562E-04   
+    *IVSSA_RMS    =  5.3668353562E-04   
+    *IVDDA_PP     =  1.0723686098E-03   
+    *IVSSA_PP     =  1.0723686098E-03   
+    *IVDDA_MAX    = -5.0467148199E-04   
+    *IVSSA_MAX    =  1.5770400918E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  6.0338297858E-01   
+    *SAMPLE_2     =  6.0360022007E-01   
+    *VOCP_INC     =  2.1724149012E-04   
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 7    OUTPUT VOLTAGE 700MV
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -5.3433668114E-04   
+    *IVSSA_AVG    =  5.3433668114E-04   
+    *IVDDA_RMS    =  5.3663455339E-04   
+    *IVSSA_RMS    =  5.3663455339E-04   
+    *IVDDA_PP     =  1.0559235376E-03   
+    *IVSSA_PP     =  1.0559235376E-03   
+    *IVDDA_MAX    = -5.0481518849E-04   
+    *IVSSA_MAX    =  1.5607387261E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  7.0326669341E-01   
+    *SAMPLE_2     =  7.0348142661E-01   
+    *VOCP_INC     =  2.1473319983E-04   
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 8    OUTPUT VOLTAGE 800MV
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -5.3432637138E-04   
+    *IVSSA_AVG    =  5.3432637138E-04   
+    *IVDDA_RMS    =  5.3748778035E-04   
+    *IVSSA_RMS    =  5.3748778035E-04   
+    *IVDDA_PP     =  1.0960118135E-03   
+    *IVSSA_PP     =  1.0960118135E-03   
+    *IVDDA_MAX    = -4.7799094834E-04   
+    *IVSSA_MAX    =  1.5740027619E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  8.0320326575E-01   
+    *SAMPLE_2     =  8.0341690000E-01   
+    *VOCP_INC     =  2.1363425076E-04   
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 9    OUTPUT VOLTAGE 900MV
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -5.3431309342E-04   
+    *IVSSA_AVG    =  5.3431309342E-04   
+    *IVDDA_RMS    =  5.3787125723E-04   
+    *IVSSA_RMS    =  5.3787125723E-04   
+    *IVDDA_PP     =  1.1125560926E-03   
+    *IVSSA_PP     =  1.1125560926E-03   
+    *IVDDA_MAX    = -4.6561807214E-04   
+    *IVSSA_MAX    =  1.5781741648E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  9.0321599576E-01   
+    *SAMPLE_2     =  9.0343289138E-01   
+    *VOCP_INC     =  2.1689561861E-04   
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 10    OUTPUT VOLTAGE 1V
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -5.3421877829E-04   
+    *IVSSA_AVG    =  5.3421877824E-04   
+    *IVDDA_RMS    =  5.3638534757E-04   
+    *IVSSA_RMS    =  5.3638534752E-04   
+    *IVDDA_PP     =  1.0003013517E-03   
+    *IVSSA_PP     =  1.0003013517E-03   
+    *IVDDA_MAX    = -5.0618405107E-04   
+    *IVSSA_MAX    =  1.5064854028E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  1.1033300405E+00   
+    *SAMPLE_2     =  1.1035575882E+00   
+    *VOCP_INC     =  2.2754767251E-04   
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 11    OUTPUT VOLTAGE 1.2V
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -5.3381194318E-04   
+    *IVSSA_AVG    =  5.3381194318E-04   
+    *IVDDA_RMS    =  5.3605082901E-04   
+    *IVSSA_RMS    =  5.3605082902E-04   
+    *IVDDA_PP     =  9.5456145265E-04   
+    *IVSSA_PP     =  9.5456145267E-04   
+    *IVDDA_MAX    = -5.0574047323E-04   
+    *IVSSA_MAX    =  1.4603019259E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  1.2032886510E+00   
+    *SAMPLE_2     =  1.2035168669E+00   
+    *VOCP_INC     =  2.2821588289E-04   
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 12    OUTPUT VOLTAGE 1.3V
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -5.3112846911E-04   
+    *IVSSA_AVG    =  5.3112846699E-04   
+    *IVDDA_RMS    =  5.3338655639E-04   
+    *IVSSA_RMS    =  5.3338655425E-04   
+    *IVDDA_PP     =  9.0360425724E-04   
+    *IVSSA_PP     =  9.0360425737E-04   
+    *IVDDA_MAX    = -5.0297548200E-04   
+    *IVSSA_MAX    =  1.4065797394E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  1.3030320634E+00   
+    *SAMPLE_2     =  1.3032498652E+00   
+    *VOCP_INC     =  2.1780179464E-04   
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 13    OUTPUT VOLTAGE 1.4V
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -5.1963033653E-04   
+    *IVSSA_AVG    =  5.1963033653E-04   
+    *IVDDA_RMS    =  5.2371563561E-04   
+    *IVSSA_RMS    =  5.2371563561E-04   
+    *IVDDA_PP     =  9.6215350134E-04   
+    *IVSSA_PP     =  9.6215350150E-04   
+    *IVDDA_MAX    = -4.5061897954E-04   
+    *IVSSA_MAX    =  1.4127724810E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  1.4019862098E+00   
+    *SAMPLE_2     =  1.4021504649E+00   
+    *VOCP_INC     =  1.6425504174E-04   
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 14    OUTPUT VOLTAGE 1.5V
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -4.8922374725E-04   
+    *IVSSA_AVG    =  4.8922373634E-04   
+    *IVDDA_RMS    =  4.9207759860E-04   
+    *IVSSA_RMS    =  4.9207758851E-04   
+    *IVDDA_PP     =  8.8933762251E-04   
+    *IVSSA_PP     =  8.8933770225E-04   
+    *IVDDA_MAX    = -4.5155051515E-04   
+    *IVSSA_MAX    =  1.3408881377E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  1.4991912346E+00   
+    *SAMPLE_2     =  1.4992088286E+00   
+    *VOCP_INC     =  1.7593995175E-05   
+
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  8.5000000000E+01 Celsius
+  ALTER index 15    OUTPUT VOLTAGE 1.6V
+    *VDDA_AVG     =  1.6000000000E+00   
+    *VSSA_AVG     =  0.0                
+    *VDDA_RMS     =  1.6000000000E+00   
+    *VSSA_RMS     =  0.0                
+    *VDDA_PP      =  0.0                
+    *VSSA_PP      =  0.0                
+    *IVDDA_AVG    = -4.3688022018E-04   
+    *IVSSA_AVG    =  4.3688022018E-04   
+    *IVDDA_RMS    =  4.4086200691E-04   
+    *IVSSA_RMS    =  4.4086200691E-04   
+    *IVDDA_PP     =  9.0876175731E-04   
+    *IVSSA_PP     =  9.0876175731E-04   
+    *IVDDA_MAX    = -3.8138524009E-04   
+    *IVSSA_MAX    =  1.2901469974E-03   
+    *PHASE_VALUE  =  1.0000000000E+00   
+    *SAMPLE_1     =  1.5941185621E+00   
+    *SAMPLE_2     =  1.5938719832E+00   
+    *VOCP_INC     = -2.4657886573E-04   

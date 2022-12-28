@@ -1,0 +1,18 @@
+
+TITLE Step response for 2-stage opamp with NMOS inputs
+EXTRACT for TRANSIENT ANALYSIS                
+  TEMPERATURE =  5.0000000000E+01 Celsius
+    *VDDA_AVG = FAILED
+    *VSSA_AVG = FAILED
+    *VDDA_RMS = FAILED
+    *VSSA_RMS = FAILED
+    *VDDA_PP = FAILED
+    *VSSA_PP = FAILED
+    *IVDDA_AVG = FAILED
+    *IVSSA_AVG = FAILED
+    *IVDDA_RMS = FAILED
+    *IVSSA_RMS = FAILED
+    *IVDDA_PP = FAILED
+    *IVSSA_PP = FAILED
+    *IVDDA_MAX = FAILED
+    *IVSSA_MAX = FAILED

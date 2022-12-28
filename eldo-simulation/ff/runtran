@@ -1,0 +1,6 @@
+echo " "
+echo "Updating testtran.in file"
+cp ../testtran.in .
+echo "Running  testtran.in sim using Eldo"
+eldo  testtran.in &
+echo " "

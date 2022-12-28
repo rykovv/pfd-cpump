@@ -1,0 +1,47 @@
+*
+* Set process corner
+*
+
+*
+*** Set temperature & supply voltage to nominal values (typical temp, typical supply)
+*
+
+.temp 50
+
+.param vdd50 = 5.0
+.param vdd35 = 3.3
+.param vdd18 = 1.8
+
+
+*
+********************************************************************
+*  Uncomment the models in the list below for the desired process  *
+********************************************************************
+*
+
+*
+*** Path to NDA models for 0.5um AMI CMOS process for TT (typical) corner
+*
+
+*.LIB /titan/software/mentorms/tech/ami05u/eldo/ami.lib       TT 
+*.LIB /titan/software/mentorms/tech/ami05u/eldo/ami_cap.lib   typ
+*.LIB /titan/software/mentorms/tech/ami05u/eldo/ami_res.lib   typ
+*.LIB /titan/software/mentorms/tech/ami05u/eldo/ami_diode.lib typ
+
+
+*
+*** Path to NDA models for 0.35um TSMC CMOS process for TT (typical) corner
+*
+
+*.LIB /titan/software/mentorms/tech/tsmc035u/eldo/tsmc.lib TT
+
+
+*
+*** Path to NDA models for 0.18um TSMC CMOS process for TT (typical) corner
+*
+
+.LIB /titan/software/mentorms/tech/tsmc018u/eldo/mm018.eldo TT
+
+
+
+

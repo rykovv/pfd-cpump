@@ -1,0 +1,215 @@
+Step response for 2-stage opamp with NMOS inputs
+********************************************************************************
+
+*Set up variables and include netlists
+.include ../setup.in
+
+*Set process corner 
+.include ./setcorner.in
+
+********************************************************************************
+* Set up probes for inputs and outputs
+********************************************************************************
+
+*.probe tran vidm = w('(v(vip)-v(vin))')   ! probe for input  differential signal
+*.probe tran vicm = w('(v(vip)+v(vin))/2') ! probe for input  common-mode  signal
+
+*.probe tran vodm = w('(v(vop)-v(von))')   ! probe for output differential signal
+*.probe tran vocm = w('(v(vop)+v(von))/2') ! probe for output common-mode  signal
+
+*.probe tran ckdm = w('(v(ckp)-v(ckn))')   ! probe for clock  differential signal
+*.probe tran ckcm = w('(v(ckp)+v(ckn))/2') ! probe for clock  common-mode  signal
+
+*.probe tran v(vop) v(von)                 ! probe for single-ended output signals
+*.probe tran v(ckp) v(ckn)                 ! probe for single-ended clock  signals
+
+.probe tran v(clkref) v(clkdiv)            ! probe for single-ended input  signals
+
+.probe tran v(vdda) v(vssa)               ! probe for supplies
+
+.probe tran v(ib25a)                      ! probe for bias node
+
+* [TODO]
+* linearity vs phase input for 1,5,10,30,60,90 degrees
+* linearity vs output voltage (fixed phase and different vo voltages)
+
+*.probe tran v(xi2.pub)                  ! probe for internal cpump nodes
+*.probe tran v(xi2.pdb)                  ! probe for internal cpump nodes
+*.probe tran v(xi2.qup)                  ! probe for internal cpump nodes
+*.probe tran v(xi2.qdn)                  ! probe for internal cpump nodes
+.probe tran v(vocp)                      ! probe for cpump output node
+.probe tran v(xi2.vo2)                   ! probe for cpump output node
+
+.probe tran v(xi1.pub)                  ! probe for internal pfd nodes
+.probe tran v(xi1.pdb)                  ! probe for internal pfd nodes
+.probe tran v(xi1.qup)                  ! probe for internal pfd nodes
+.probe tran v(xi1.qdn)                  ! probe for internal pfd nodes
+.probe tran v(xi1.pudis)                ! probe for internal pfd nodes
+.probe tran v(xi1.pddis)                ! probe for internal pfd nodes
+.probe tran v(xi1.rst)                  ! probe for internal pfd nodes
+
+
+
+********************************************************************************
+* Set up measure statements for supplies
+********************************************************************************
+
+.meas tran vdda_avg     AVG  v(vdda)    FROM='10*per' TO='20*per'
+.meas tran vssa_avg     AVG  v(vssa)    FROM='10*per' TO='20*per'
+.meas tran vdda_rms     RMS  v(vdda)    FROM='10*per' TO='20*per'
+.meas tran vssa_rms     RMS  v(vssa)    FROM='10*per' TO='20*per'
+.meas tran vdda_pp      PP   v(vdda)    FROM='10*per' TO='20*per'
+.meas tran vssa_pp      PP   v(vssa)    FROM='10*per' TO='20*per'
+
+.meas tran ivdda_avg    AVG  i(vdda)    FROM='10*per' TO='20*per'
+.meas tran ivssa_avg    AVG  i(vssa)    FROM='10*per' TO='20*per'
+.meas tran ivdda_rms    RMS  i(vdda)    FROM='10*per' TO='20*per'
+.meas tran ivssa_rms    RMS  i(vssa)    FROM='10*per' TO='20*per'
+.meas tran ivdda_pp     PP   i(vdda)    FROM='10*per' TO='20*per'
+.meas tran ivssa_pp     PP   i(vssa)    FROM='10*per' TO='20*per'
+.meas tran ivdda_max    MAX  i(vdda)    FROM='10*per' TO='20*per'
+.meas tran ivssa_max    MAX  i(vssa)    FROM='10*per' TO='20*per'
+
+********************************************************************************
+* Set up measure statements for input signals
+********************************************************************************
+
+*.meas tran vidm_pp    PP    w('(v(vip)-v(vin))') FROM='10*per' TO='20*per'
+*.meas tran vidm_min   MIN   w('(v(vip)-v(vin))') FROM='10*per' TO='20*per'
+*.meas tran vidm_max   MAX   w('(v(vip)-v(vin))') FROM='10*per' TO='20*per'
+*.meas tran vidm_avg   AVG   w('(v(vip)-v(vin))') FROM='10*per' TO='20*per' 
+*.meas tran vidm_v10   PARAM='vidm_min + (0.10*vidm_pp)' OFF
+*.meas tran vidm_v20   PARAM='vidm_min + (0.20*vidm_pp)' OFF
+*.meas tran vidm_v50   PARAM='vidm_min + (0.50*vidm_pp)' OFF
+*.meas tran vidm_v80   PARAM='vidm_min + (0.80*vidm_pp)' OFF
+*.meas tran vidm_v90   PARAM='vidm_min + (0.90*vidm_pp)' OFF
+*.meas tran vidm_tf80  TRIG  w('(v(vip)-v(vin))') VAL=vidm_v80 TD='16*per' FALL=1
+*+                     TARG  w('(v(vip)-v(vin))') VAL=vidm_v20 TD='16*per' FALL=1
+*.meas tran vidm_tf90  TRIG  w('(v(vip)-v(vin))') VAL=vidm_v90 TD='16*per' FALL=1
+*+                     TARG  w('(v(vip)-v(vin))') VAL=vidm_v10 TD='16*per' FALL=1
+*.meas tran vidm_tn10m WHEN  w('(v(vip)-v(vin))')= -10m        TD='16*per' FALL=1 OFF
+*.meas tran vidm_tp10m WHEN  w('(v(vip)-v(vin))')=  10m        TD='16*per' FALL=1 OFF
+*.meas tran vidm_sr    PARAM='20m/(vidm_tn10m-vidm_tp10m)'
+*.meas tran vidm_pw    TRIG  w('(v(vip)-v(vin))') VAL=vidm_v50 TD='16*per' RISE=1 
+*+                     TARG  w('(v(vip)-v(vin))') VAL=vidm_v50 TD='16*per' FALL=1 
+*.meas tran vidm_duty  PARAM='100*(vidm_pw/per)'
+*.meas tran vicm_pp    PP    w('(v(vip)+v(vin))/2') FROM='10*per' TO='20*per'
+*.meas tran vicm_avg   AVG   w('(v(vip)+v(vin))/2') FROM='10*per' TO='20*per' OFF
+*.meas tran vicm-vdd   PARAM='vdda - vicm_avg'
+
+
+*.meas tran ckdm_pp    PP    w('(v(ckp)-v(ckn))') FROM='10*per' TO='20*per'
+*.meas tran ckdm_min   MIN   w('(v(ckp)-v(ckn))') FROM='10*per' TO='20*per'
+*.meas tran ckdm_max   MAX   w('(v(ckp)-v(ckn))') FROM='10*per' TO='20*per'
+*.meas tran ckdm_avg   AVG   w('(v(ckp)-v(ckn))') FROM='10*per' TO='20*per' 
+*.meas tran ckdm_v10   PARAM='ckdm_min + (0.10*ckdm_pp)' OFF
+*.meas tran ckdm_v20   PARAM='ckdm_min + (0.20*ckdm_pp)' OFF
+*.meas tran ckdm_v50   PARAM='ckdm_min + (0.50*ckdm_pp)' OFF
+*.meas tran ckdm_v80   PARAM='ckdm_min + (0.80*ckdm_pp)' OFF
+*.meas tran ckdm_v90   PARAM='ckdm_min + (0.90*ckdm_pp)' OFF
+*.meas tran ckdm_tf80  TRIG  w('(v(ckp)-v(ckn))') VAL=ckdm_v80 TD='16*per' FALL=1
+*+                     TARG  w('(v(ckp)-v(ckn))') VAL=ckdm_v20 TD='16*per' FALL=1
+*.meas tran ckdm_tf90  TRIG  w('(v(ckp)-v(ckn))') VAL=ckdm_v90 TD='16*per' FALL=1
+*+                     TARG  w('(v(ckp)-v(ckn))') VAL=ckdm_v10 TD='16*per' FALL=1
+*.meas tran ckdm_tn10m WHEN  w('(v(ckp)-v(ckn))')= -10m        TD='16*per' FALL=1 OFF
+*.meas tran ckdm_tp10m WHEN  w('(v(ckp)-v(ckn))')=  10m        TD='16*per' FALL=1 OFF
+*.meas tran ckdm_sr    PARAM='20m/(ckdm_tn10m-ckdm_tp10m)'
+*.meas tran ckdm_pw    TRIG  w('(v(ckp)-v(ckn))') VAL=ckdm_v50 TD='16*per' RISE=1 
+*+                     TARG  w('(v(ckp)-v(ckn))') VAL=ckdm_v50 TD='16*per' FALL=1 
+*.meas tran ckdm_duty  PARAM='100*(ckdm_pw/per)'
+*.meas tran ckcm_pp    PP    w('(v(ckp)+v(ckn))/2') FROM='10*per' TO='20*per'
+*.meas tran ckcm_avg   AVG   w('(v(ckp)+v(ckn))/2') FROM='10*per' TO='20*per' OFF
+*.meas tran ckcm-vdd   PARAM='vdda - ckcm_avg'
+
+
+********************************************************************************
+* Set up measure statements for output signals
+********************************************************************************
+
+*.meas tran vodm_pp    PP    w('(v(vop)-v(von))') FROM='10*per' TO='20*per'
+*.meas tran vodm_min   MIN   w('(v(vop)-v(von))') FROM='10*per' TO='20*per'
+*.meas tran vodm_max   MAX   w('(v(vop)-v(von))') FROM='10*per' TO='20*per'
+*.meas tran vodm_avg   AVG   w('(v(vop)-v(von))') FROM='10*per' TO='20*per' 
+*.meas tran vodm_v10   PARAM='vodm_min + (0.10*vodm_pp)' OFF
+*.meas tran vodm_v20   PARAM='vodm_min + (0.20*vodm_pp)' OFF
+*.meas tran vodm_v50   PARAM='vodm_min + (0.50*vodm_pp)' OFF
+*.meas tran vodm_v80   PARAM='vodm_min + (0.80*vodm_pp)' OFF
+*.meas tran vodm_v90   PARAM='vodm_min + (0.90*vodm_pp)' OFF
+*.meas tran vodm_tf80  TRIG  w('(v(vop)-v(von))') VAL=vodm_v80 TD='16*per' FALL=1
+*+                     TARG  w('(v(vop)-v(von))') VAL=vodm_v20 TD='16*per' FALL=1
+*.meas tran vodm_tf90  TRIG  w('(v(vop)-v(von))') VAL=vodm_v90 TD='16*per' FALL=1
+*+                     TARG  w('(v(vop)-v(von))') VAL=vodm_v10 TD='16*per' FALL=1
+*.meas tran vodm_tn10m WHEN  w('(v(vop)-v(von))')= -10m        TD='16*per' FALL=1 OFF
+*.meas tran vodm_tp10m WHEN  w('(v(vop)-v(von))')=  10m        TD='16*per' FALL=1 OFF
+*.meas tran vodm_sr    PARAM='20m/(vodm_tn10m-vodm_tp10m)'
+*.meas tran vodm_pw    TRIG  w('(v(vop)-v(von))') VAL=vodm_v50 TD='16*per' RISE=1 
+*+                     TARG  w('(v(vop)-v(von))') VAL=vodm_v50 TD='16*per' FALL=1 
+*.meas tran vodm_duty  PARAM='100*(vodm_pw/per)'
+*.meas tran vocm_pp    PP    w('(v(vop)+v(von))/2') FROM='10*per' TO='20*per'
+*.meas tran vocm_avg   AVG   w('(v(vop)+v(von))/2') FROM='10*per' TO='20*per' OFF
+*.meas tran vocm-vdd   PARAM='vdda - vocm_avg'
+
+.meas tran phase_value  PARAM='phase_value'
+.meas tran sample_1	AVG v(vocp) FROM='17.75*per' TO='18.25*per'
+.meas tran sample_2	AVG v(vocp) FROM='18.75*per' TO='19.25*per'
+.meas tran vocp_inc 	PARAM='sample_2 - sample_1'
+
+********************************************************************************
+* Set up analysis
+********************************************************************************
+
+.op 0.0 '4.75*per'               ! get operating points at time = 0 and 4.75 periods
+
+*.tran 100p   '1*per'            ! short transient test to debug errors
+.tran 100p  '20*per' 0 100p uic  ! main transient simulation
+
+********************************************************************************
+
+********************************************************************************
+.alter output voltage 100mV
+.param vobias = 100m
+********************************************************************************
+.alter output voltage 200mV
+.param vobias = 200m
+********************************************************************************
+.alter output voltage 300mV
+.param vobias = 300m
+********************************************************************************
+.alter output voltage 400mV
+.param vobias = 500m
+********************************************************************************
+.alter output voltage 500mV
+.param vobias = 500m
+********************************************************************************
+.alter output voltage 600mV
+.param vobias = 600m
+********************************************************************************
+.alter output voltage 700mV
+.param vobias = 700m
+********************************************************************************
+.alter output voltage 800mV
+.param vobias = 800m
+********************************************************************************
+.alter output voltage 900mV
+.param vobias = 900m
+********************************************************************************
+.alter output voltage 1V
+.param vobias = 1.1
+********************************************************************************
+.alter output voltage 1.2V
+.param vobias = 1.2
+********************************************************************************
+.alter output voltage 1.3V
+.param vobias = 1.3
+********************************************************************************
+.alter output voltage 1.4V
+.param vobias = 1.4
+********************************************************************************
+.alter output voltage 1.5V
+.param vobias = 1.5
+********************************************************************************
+.alter output voltage 1.6V
+.param vobias = 1.6
+********************************************************************************
+
+.end

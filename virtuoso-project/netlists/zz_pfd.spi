@@ -1,0 +1,16 @@
+** Library name: work_VR
+** Cell name: zz_PFD
+** View name: schematic
+
+vssa vssa n0 DC=vssa
+vdda vdda n0 DC=vdda
+
+vclkdiv clkdiv vssa PULSE vdda vssa td_div tr_div tr_div pw_div per_div
+vclkref clkref vssa PULSE vdda vssa td_ref tr_ref tr_ref pw_ref per_ref
+
+xi1 clkdiv clkref pd_c pu_c vdda vssa PFD
+
+cl_pu pu_c vssa cl_pu M=1
+cl_pd pd_c vssa cl_pd M=1
+
+.END
